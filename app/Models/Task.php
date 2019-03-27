@@ -10,4 +10,9 @@ class Task extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function getAll()
+    {
+        return $this->all();
+    }
 }
