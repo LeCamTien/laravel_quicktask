@@ -22,6 +22,9 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\Task::class, function (Faker\Generator $faker) {
     return [
-        'name' =>$faker->name
+        'name' =>$faker->name,
+        'user_id' => function () {
+            return factory(App\Models\User::class)->create()->id;
+        },
     ];
 });
